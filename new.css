@@ -1,0 +1,71 @@
+body {
+  font-family: Arial, sans-serif;
+  background: black;
+  margin: 0;
+  padding: 0;
+}
+
+.animation-box {
+  width: 90%;
+  height: 20rem;
+  background-color: black;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.first-text,
+.second-text {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Text size smaller */
+.first-text {
+  font-size: 3.5vw;
+  color: white;
+  animation: bottomFadeInOut 2.5s ease-in-out;
+}
+
+.second-text {
+  font-size: 3vw;
+  color: white;
+  animation: bottomFadeInOut 2.5s ease-in-out;
+  animation-delay: 2.5s;
+}
+
+@keyframes bottomFadeInOut {
+  0% {
+    transform: translate(-50%, 1rem);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .animation-box {
+    height: 15rem;
+  }
+
+  .first-text {
+    font-size: 6vw;
+  }
+
+  .second-text {
+    font-size: 5vw;
+  }
+}
